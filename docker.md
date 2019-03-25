@@ -30,10 +30,14 @@
      * ![images](images/images.png)
 
 * 配置kube环境 
-说明：.kube 不一定会自己建立文件夹，手工建立时：右键新建文件夹-命名 .kube. 【主要:文件名前后都有"."】
-```powershell
- [Environment]::SetEnvironmentVariable("KUBECONFIG", $HOME + "\.kube\config", [EnvironmentVariableTarget]::Machine)
-```
+说明：.kube 不一定会自己建立文件夹，手工建立时：右键新建文件夹-命名 .kube. 【主要:文件名前后都有"."】，
+
+   * 手工配置,主要 "C:\Users\anber\.kube\config" 中的 "anber" 为当前用户名，请根据自身情况更改
+    * ![env](images/env.png)
+   * 命令行配置
+    ```powershell
+    [Environment]::SetEnvironmentVariable("KUBECONFIG", $HOME + "\.kube\config", [EnvironmentVariableTarget]::Machine)
+    ```
 * 设置防火墙，防火墙-高级设置-入站规则-新建规则-规则类型 程序-路径 C:\Program Files\Docker\Docker\resources\vpnkit.exe-允许连接-域、专业、公用-名称 vpnkit - 完成；出站规则-新建规则-规则类型 程序-路径 C:\Program Files\Docker\Docker\resources\vpnkit.exe-允许连接-域、专业、公用-名称 vpnkit - 完成；
 
 * 启用Kubernetes
